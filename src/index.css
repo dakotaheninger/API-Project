@@ -1,0 +1,37 @@
+.nav-bar {
+    position: fixed;
+    width: 100%;
+    background-color: black;
+}
+.all-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+}
+.espn {
+    padding-top: 1.2vmin;
+}
+.main-title {
+    color: white;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-top: .5vmin;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.dropdown-content a {
+    display: block;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.header {
+    padding-top: 10vh;
+}

@@ -2,6 +2,7 @@
     position: fixed;
     width: 100%;
     background-color: black;
+    z-index: 2;
 }
 .all-links {
     display: flex;
@@ -34,4 +35,24 @@
 }
 .header {
     padding-top: 10vh;
+}
+.all-scores {
+    text-align: center;
+}
+.ind-score {
+    border: 2px solid black;
+    width: 40%;
+    margin: 2vmin;
+    display: inline-block;
+}
+.team-name {
+    float: left;
+    margin-left: 1vmin;
+}
+.team-score {
+    float: right;
+    margin-right: 1vmin;
+}
+.ind-pop-stories {
+    margin: 1vmin 0;
 }

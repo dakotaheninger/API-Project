@@ -7,11 +7,12 @@ class Article extends React.Component {
             backgroundImage: "",
             height: "",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "left"
+            backgroundPosition: "center",
+            backgroundSize: "contain"
         };
         if(index % 3 === 0){
             style.backgroundImage = `url(${item})`;
-            style.height = `50vh`
+            style.height = `30vh`
         } else {
             style.backgroundImage = "";
             style.height = "";

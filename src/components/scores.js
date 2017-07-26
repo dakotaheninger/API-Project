@@ -8,7 +8,7 @@ class Scores extends React.Component {
                 <p>
                     <span className="team-name">{this.props.item.game.awayTeam.Name}</span><span className="team-score">{this.props.item.awayScore}</span>
                 </p>
-                <p>
+                <p className="at">
                     @
                 </p>
                 <p>

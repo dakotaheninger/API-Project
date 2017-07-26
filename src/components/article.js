@@ -12,7 +12,7 @@ class Article extends React.Component {
         };
         if(index % 3 === 0){
             style.backgroundImage = `url(${item})`;
-            style.height = `30vh`
+            style.height = `35vh`
         } else {
             style.backgroundImage = "";
             style.height = "";
@@ -21,12 +21,12 @@ class Article extends React.Component {
     }
     render() {
         return (
-            <div>
+            <div className="stories">
                 <div style={this.imageOrNot(this.props.index, this.props.item.urlToImage)}>
                 </div>
                 <a href={`${this.props.item.url}`}>
-                    <h1>{this.props.item.title}</h1>
-                    <h2>{this.props.item.description}</h2>
+                    <p className="story-title">{this.props.item.title}</p>
+                    <p className="story-description">{this.props.item.description}</p>
                 </a>
             </div>
         );

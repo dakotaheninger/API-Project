@@ -9,7 +9,7 @@ class ArticleContainer extends React.Component {
     render() {
         return (
             <div>
-                <div className="col-md-6">
+                <div className="col-md-4">
                     <ArticleList allArticles={this.props.allArticles}/>
                 </div>
             </div>

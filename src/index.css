@@ -55,7 +55,19 @@
 }
 .ind-pop-stories {
     margin: 1vmin 0;
+    color: black;
 }
 .at {
     padding-top: 1vmin;
+}
+.story-title {
+    font-size: 30px;
+    color: black;
+}
+.story-description {
+    font-size: 15px;
+    color: black;
+}
+.stories a:hover {
+
 }

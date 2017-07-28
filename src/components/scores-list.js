@@ -10,7 +10,7 @@ class ScoresList extends React.Component{
     }
     render() {
         return (
-            <div className="col-md-offset-1 col-md-3 all-scores">
+            <div>
                 {this.getScores()}
             </div>
         );

@@ -5,15 +5,15 @@ class Scores extends React.Component {
     render() {
         return (
             <div className="ind-score">
-                <p>
+                <div>
                     <span className="team-name">{this.props.item.game.awayTeam.Name}</span><span className="team-score">{this.props.item.awayScore}</span>
-                </p>
-                <p className="at">
+                </div>
+                <div className="at">
                     @
-                </p>
-                <p>
+                </div>
+                <div>
                     <span className="team-name">{this.props.item.game.homeTeam.Name}</span><span className="team-score"> {this.props.item.homeScore}</span>
-                </p>
+                </div>
             </div>
         );
     }

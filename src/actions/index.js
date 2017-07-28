@@ -22,7 +22,6 @@ let day = addZero(parseInt(newDate.getDate()) - 1);
 
 
 export function scoreData(){
-    console.log(month);
     return (dispatch) =>{
         axios.get(`https://api.mysportsfeeds.com/v1.1/pull/mlb/2017-regular/scoreboard.json?fordate=${year}${month}${day}`,  config).then((response)=>{
             console.log(response.data.scoreboard.gamescore);

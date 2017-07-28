@@ -42,11 +42,12 @@
 .ind-score {
     border: 2px solid black;
     width: 40%;
+    /*height: 5vh;*/
     margin: 2vmin;
     display: inline-block;
+    text-align: left;
 }
 .team-name {
-    float: left;
     margin-left: 1vmin;
 }
 .team-score {
@@ -58,7 +59,7 @@
     color: black;
 }
 .at {
-    padding-top: 1vmin;
+    margin-left: 1vmin;
 }
 .story-title {
     font-size: 30px;
@@ -67,7 +68,4 @@
 .story-description {
     font-size: 15px;
     color: black;
-}
-.stories a:hover {
-
 }

@@ -1,44 +1,68 @@
+/***************
+*****NAVBAR*****
+***************/
+
 .nav-bar {
     position: fixed;
     width: 100%;
     background-color: black;
     z-index: 2;
 }
+
+.main-title {
+    color: white;
+    font-style: italic;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 50px;
+}
+
 .all-links {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    padding-top: 2vmin;
-    padding-bottom: 2vmin;
 }
-.espn {
-    padding-top: 1.2vmin;
-}
-.main-title {
-    color: white;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-    padding-top: .5vmin;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    z-index: 1;
-}
-.dropdown-content a {
-    display: block;
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+
+/***************
+*****HEADER*****
+***************/
+
 .header {
     padding-top: 10vh;
 }
+
+/*****************
+*****ARTICLES*****
+*****************/
+
+.story-title {
+    font-size: 30px;
+    color: black;
+}
+
+.story-description {
+    font-size: 15px;
+    color: black;
+}
+
+.home-articles {
+    text-align: center;
+}
+
+.main-articles {
+    text-align: center;
+}
+.news-articles{
+    margin-top: 6vmax;
+}
+
+/***************
+*****SCORES*****
+***************/
+
 .all-scores {
     text-align: center;
 }
+
 .ind-score {
     border: 2px solid black;
     width: 40%;
@@ -47,25 +71,55 @@
     display: inline-block;
     text-align: left;
 }
+
 .team-name {
     margin-left: 1vmin;
 }
+
 .team-score {
     float: right;
     margin-right: 1vmin;
 }
+
 .ind-pop-stories {
     margin: 1vmin 0;
     color: black;
 }
+
 .at {
     margin-left: 1vmin;
 }
-.story-title {
-    font-size: 30px;
-    color: black;
+
+/*****STATS*****/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-top: .5vmin;
 }
-.story-description {
-    font-size: 15px;
-    color: black;
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    z-index: 1;
 }
+
+.dropdown-content a {
+    display: block;
+    text-align: center;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right:3px solid black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.all-channels {
+    text-align: center;
+}
+.fox-sports {
+    margin-top: 3vmin;
+}
+
+

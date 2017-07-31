@@ -22,7 +22,7 @@ class HomePageContainer extends React.Component {
                 <div className="col-md-4">
                     <ScoresList allScores={this.props.allScores}/>
                 </div>
-                <div className="col-md-4">
+                <div className="col-md-4 home-articles">
                     <ArticleList allArticles={this.props.allArticles}/>
                 </div>
                 <div>

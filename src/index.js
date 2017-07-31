@@ -20,7 +20,7 @@ class App extends React.Component {
             <div className="container-fluid">
                 <BrowserRouter>
                     <div className="row">
-                        <Navbar title="Sports News"/>
+                        <Navbar title="My Sports API"/>
                         <Switch>
                             <Route exact path ="/" component={HomePageContainer}/>
                             <Route exact path ="/news" component={NewsContainer}/>

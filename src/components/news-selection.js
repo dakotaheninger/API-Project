@@ -18,7 +18,7 @@ class NewsSelection extends React.Component {
                     </img>
                 </div>
                 <div className="dropdown fox-sports">
-                    <img alt="FOX SPORTS" src="/images/fox sports.png" height="100px" className="dropbtn">
+                    <img alt="FOX SPORTS" src="/images/fox_sports.png" height="100px" className="dropbtn">
                     </img>
                     <div className="dropdown-content">
                         <a onClick={() => {

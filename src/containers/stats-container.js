@@ -35,7 +35,7 @@ class StatsContainer extends Component{
                 "password": "dh1133094"
             }
         }
-        axios.get(`https://api.mysportsfeeds.com/v1.1/pull/mlb/latest/scoreboard.json?`, config)
+        axios.get(`https://api.mysportsfeeds.com/v1.1/pull/mlb/latest/daily_player_stats.json?fordate=20170801&team=chicago-cubs`, config)
         .then( response => {
             console.log(response)
             // this.setState({
@@ -61,7 +61,7 @@ class StatsContainer extends Component{
                         <option value='team'>Team</option>
                     </select>
                     <button onClick={ this.getStats }>Search</button>
-                    
+
                 </section>
 
                 <section className='results'>

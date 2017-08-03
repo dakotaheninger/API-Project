@@ -4,7 +4,7 @@ import {Provider} from "react-redux";
 import {createStore, applyMiddleware} from "redux";
 import thunk from "redux-thunk";
 import reducers from "./reducers/";
-import {Route, BrowserRouter, Switch, Link} from "react-router-dom";
+import {Route, BrowserRouter, Switch} from "react-router-dom";
 import "./index.css";
 import HomePageContainer from "./containers/home-page-container";
 import NewsContainer from "./containers/news-container";

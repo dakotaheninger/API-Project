@@ -20,7 +20,7 @@ class StatsContainer extends Component{
         this.updateUserInput = this.updateUserInput.bind(this);
         this.updateSearchBy = this.updateSearchBy.bind(this);
         this.handleNavClick = this.handleNavClick.bind(this);
-        this.getStats = this.getStats.bind(this);
+        this.putStatsOnState = this.putStatsOnState.bind(this);
     }
 
     updateUserInput(e){
@@ -41,34 +41,14 @@ class StatsContainer extends Component{
         })
     }
 
-    getStats(){
-        let config = {
-            "auth": {
-                "username": "dakotaheninger" ,
-                "password": "dh1133094"
-            }
-        }
-        axios.get(`https://api.mysportsfeeds.com/v1.1/pull/mlb/latest/daily_player_stats.json?fordate=20170801&team=chicago-cubs`, config)
-        .then( response => {
-            console.log(response)
-            // this.setState({
-            //     stats: response.data
-            // })
+    putStatsOnState(newStats){
+        this.setState({
+            stats: newStats
         })
+        console.log(newStats)
     }
 
     render() {
-
-        // let searchForm;
-        // if (this.state.currentSport === 'nba'){
-        //     searchForm = <SportSearch sport={}/>
-        // }else if (this.state.currentSport === 'nhl'){
-        //     searchForm = <SportSearch />
-        // }else if (this.state.currentSport === 'mlb'){
-        //     searchForm = <SportSearch />
-        // }else if (this.state.currentSport === 'nfl'){
-        //     searchForm = <SportSearch />
-        // }
 
         return (
             <section className='stats_page'>
@@ -88,7 +68,8 @@ class StatsContainer extends Component{
                     </div>                    
                 </div>
 
-                <SportSearch sport={ this.state.currentSport } />
+                <SportSearch sport={ this.state.currentSport } 
+                putStatsOnState={ this.putStatsOnState } />
 
                 <section className='results'>
                     <ul>

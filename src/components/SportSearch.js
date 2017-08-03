@@ -16,13 +16,15 @@ class SportSearch extends Component{
             playerInput: ''
         }
 
+        this.getStats = this.getStats.bind(this);
         this.updatePlayerInput = this.updatePlayerInput.bind(this);
         this.updateTeamInput = this.updateTeamInput.bind(this);
     }
 
-    handleSelectionChange(str){
+    getStats(str){
         let today = new Date();
         let year = today.getFullYear();
+        let newStats = [];
         let config = {
             "auth": {
                 "username": "dakotaheninger" ,
@@ -33,17 +35,26 @@ class SportSearch extends Component{
         if (str === 'standings'){
 
             axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.sport}/${year-1}-${year}-regular/overall_team_standings.json`, config)
-            .then( response => console.log(response) )
+            .then( response => {
+                newStats = response.data.overallteamstandings.teamstandingsentry
+                this.props.putStatsOnState(newStats)
+            })
 
         }else if (str === 'roster'){
 
-             axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.sport}/${year-1}-${year}-regular/roster_players.json?fordate=20160107&team=${this.state.teamInput}`, config)
-            .then( response => console.log(response) )
+             axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.sport}/${year-1}-${year}-regular/roster_players.json?fordate=${year}0101&team=${this.state.teamInput}`, config)
+            .then( response => {
+                newStats = response.data.rosterplayers.playerentry
+                this.props.putStatsOnState(newStats)
+            })
 
         }else if (str === 'player'){
 
-            axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.sport}/${year-1}-${year}-regular/cumulative_player_stats.json$player=${this.state.playerInput}`, config)
-            .then( response => console.log(response) )
+            axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.sport}/${year-1}-${year}-regular/daily_player_stats.json?fordate=${year}0101&player=${this.state.playerInput}`, config)
+            .then( response => {
+                console.log(response) 
+                // newStats = response.data
+            })
 
         }
 
@@ -81,13 +92,13 @@ class SportSearch extends Component{
 
                     { img }
                     
-                    <div className='search_options' onClick={ () => this.handleSelectionChange('standings') } >
+                    <div className='search_options' onClick={ () => this.getStats('standings') } >
                         Overall Standings
                     </div>
-                    <div className='search_options' onClick={ () => this.handleSelectionChange('roster') } >
+                    <div className='search_options' onClick={ () => this.getStats('roster') } >
                         Team Roster
                     </div>
-                    <div className='search_options' onClick={ () => this.handleSelectionChange('player') } >
+                    <div className='search_options' onClick={ () => this.getStats('player') } >
                         Player Stats
                     </div>
 

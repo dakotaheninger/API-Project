@@ -2,18 +2,25 @@ import React, { Component } from "react";
 import axios from 'axios';
 import './stats.css';
 
+import SportSearch from './../components/SportSearch.js';
+// import MLBSearch from './../components/MLBSearch.js';
+// import NHLSearch from './../components/NHLSearch.js';
+// import NFLSearch from './../components/NFLSearch.js';
+
 class StatsContainer extends Component{
     constructor(props){
         super(props);
         this.state = {
             userInput: '',
             searchBy: 'player',
-            stats: []
+            stats: [],
+            currentSport: 'nba'
         }
 
         this.updateUserInput = this.updateUserInput.bind(this);
         this.updateSearchBy = this.updateSearchBy.bind(this);
-        this.getStats = this.getStats.bind(this);
+        this.handleNavClick = this.handleNavClick.bind(this);
+        this.putStatsOnState = this.putStatsOnState.bind(this);
     }
 
     updateUserInput(e){
@@ -28,41 +35,41 @@ class StatsContainer extends Component{
         })
     }
 
-    getStats(){
-        let config = {
-            "auth": {
-                "username": "dakotaheninger" ,
-                "password": "dh1133094"
-            }
-        }
-        axios.get(`https://api.mysportsfeeds.com/v1.1/pull/mlb/latest/daily_player_stats.json?fordate=20170801&team=chicago-cubs`, config)
-        .then( response => {
-            console.log(response)
-            // this.setState({
-            //     stats: response.data
-            // })
+    handleNavClick(str){
+        this.setState({
+            currentSport: str
         })
     }
 
+    putStatsOnState(newStats){
+        this.setState({
+            stats: newStats
+        })
+        console.log(newStats)
+    }
+
     render() {
+
         return (
             <section className='stats_page'>
 
-                <section className='search_bar'>
-                    
-                    <input className='search_input'
-                    placeholder='Enter Search Here' 
-                    onChange={ this.updateUserInput }
-                    value={ this.state.userInput } />
+                <div className='stats_nav'>
+                    <div onClick={ () => this.handleNavClick('nba') } >
+                        NBA
+                    </div>
+                    <div onClick={ () => this.handleNavClick('nhl') } >
+                        NHL
+                    </div> 
+                    <div onClick={ () => this.handleNavClick('mlb') } >
+                        MLB
+                    </div>  
+                    <div onClick={ () => this.handleNavClick('nfl') } >
+                        NFL
+                    </div>                    
+                </div>
 
-                    <h2>Search By</h2>
-                    <select onChange={ this.updateSearchBy }>
-                        <option value='player'>Player</option>
-                        <option value='team'>Team</option>
-                    </select>
-                    <button onClick={ this.getStats }>Search</button>
-
-                </section>
+                <SportSearch sport={ this.state.currentSport } 
+                putStatsOnState={ this.putStatsOnState } />
 
                 <section className='results'>
                     <ul>

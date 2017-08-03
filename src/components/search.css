@@ -1,0 +1,65 @@
+.search{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-left: 100px;
+}
+
+.search_img{
+    width: 80px;
+    height: 80px;   
+    position: absolute;
+    left: 5px;
+    top: 5px;
+}
+
+.nfl_img{
+    background: url('./../img/nfl.png')center no-repeat;
+    background-size: cover;
+}
+
+.nba_img{
+    background: url('./../img/nba.png')center no-repeat;
+    background-size: cover;
+}
+
+.mlb_img{
+    background: url('./../img/mlb.png')center no-repeat;
+    background-size: cover;
+}
+
+.nhl_img{
+    background: url('./../img/nhl.jpg')center no-repeat;
+    background-size: cover;
+}
+
+.search_options{
+    width: 220px;
+    height: 22px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 19px;
+    background: #c5c5ac;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.input{
+    position: absolute;
+    left: 340px;
+    width: 200px;
+    height: 20px;
+    line-height: 19px;
+    font-size: 16px;
+}
+
+.team_input{
+    top: 30px;
+}
+
+.player_input{
+    top: 60px;
+}
+

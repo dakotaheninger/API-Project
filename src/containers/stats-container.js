@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import axios from 'axios';
 import './stats.css';
 
-import NBASearch from './../components/NBASearch.js';
-import MLBSearch from './../components/MLBSearch.js';
-import NHLSearch from './../components/NHLSearch.js';
-import NFLSearch from './../components/NFLSearch.js';
+import SportSearch from './../components/SportSearch.js';
+// import MLBSearch from './../components/MLBSearch.js';
+// import NHLSearch from './../components/NHLSearch.js';
+// import NFLSearch from './../components/NFLSearch.js';
 
 class StatsContainer extends Component{
     constructor(props){
@@ -59,16 +59,16 @@ class StatsContainer extends Component{
 
     render() {
 
-        let searchForm;
-        if (this.state.currentSport === 'nba'){
-            searchForm = <NBASearch />
-        }else if (this.state.currentSport === 'nhl'){
-            searchForm = <NHLSearch />
-        }else if (this.state.currentSport === 'mlb'){
-            searchForm = <MLBSearch />
-        }else if (this.state.currentSport === 'nfl'){
-            searchForm = <NFLSearch />
-        }
+        // let searchForm;
+        // if (this.state.currentSport === 'nba'){
+        //     searchForm = <SportSearch sport={}/>
+        // }else if (this.state.currentSport === 'nhl'){
+        //     searchForm = <SportSearch />
+        // }else if (this.state.currentSport === 'mlb'){
+        //     searchForm = <SportSearch />
+        // }else if (this.state.currentSport === 'nfl'){
+        //     searchForm = <SportSearch />
+        // }
 
         return (
             <section className='stats_page'>
@@ -88,23 +88,7 @@ class StatsContainer extends Component{
                     </div>                    
                 </div>
 
-                <section className='search_bar'>
-
-                    { searchForm }
-                    
-                    {/* <input className='search_input'
-                    placeholder='Enter Search Here' 
-                    onChange={ this.updateUserInput }
-                    value={ this.state.userInput } />
-
-                    <h2>Search By</h2>
-                    <select onChange={ this.updateSearchBy }>
-                        <option value='player'>Player</option>
-                        <option value='team'>Team</option>
-                    </select>
-                    <button onClick={ this.getStats }>Search</button> */}
-
-                </section>
+                <SportSearch sport={ this.state.currentSport } />
 
                 <section className='results'>
                     <ul>

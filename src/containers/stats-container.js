@@ -2,17 +2,24 @@ import React, { Component } from "react";
 import axios from 'axios';
 import './stats.css';
 
+import NBASearch from './../components/NBASearch.js';
+import MLBSearch from './../components/MLBSearch.js';
+import NHLSearch from './../components/NHLSearch.js';
+import NFLSearch from './../components/NFLSearch.js';
+
 class StatsContainer extends Component{
     constructor(props){
         super(props);
         this.state = {
             userInput: '',
             searchBy: 'player',
-            stats: []
+            stats: [],
+            currentSport: 'nba'
         }
 
         this.updateUserInput = this.updateUserInput.bind(this);
         this.updateSearchBy = this.updateSearchBy.bind(this);
+        this.handleNavClick = this.handleNavClick.bind(this);
         this.getStats = this.getStats.bind(this);
     }
 
@@ -25,6 +32,12 @@ class StatsContainer extends Component{
     updateSearchBy(e){
         this.setState({
             searchBy: e.target.value
+        })
+    }
+
+    handleNavClick(str){
+        this.setState({
+            currentSport: str
         })
     }
 
@@ -45,12 +58,41 @@ class StatsContainer extends Component{
     }
 
     render() {
+
+        let searchForm;
+        if (this.state.currentSport === 'nba'){
+            searchForm = <NBASearch />
+        }else if (this.state.currentSport === 'nhl'){
+            searchForm = <NHLSearch />
+        }else if (this.state.currentSport === 'mlb'){
+            searchForm = <MLBSearch />
+        }else if (this.state.currentSport === 'nfl'){
+            searchForm = <NFLSearch />
+        }
+
         return (
             <section className='stats_page'>
 
+                <div className='stats_nav'>
+                    <div onClick={ () => this.handleNavClick('nba') } >
+                        NBA
+                    </div>
+                    <div onClick={ () => this.handleNavClick('nhl') } >
+                        NHL
+                    </div> 
+                    <div onClick={ () => this.handleNavClick('mlb') } >
+                        MLB
+                    </div>  
+                    <div onClick={ () => this.handleNavClick('nfl') } >
+                        NFL
+                    </div>                    
+                </div>
+
                 <section className='search_bar'>
+
+                    { searchForm }
                     
-                    <input className='search_input'
+                    {/* <input className='search_input'
                     placeholder='Enter Search Here' 
                     onChange={ this.updateUserInput }
                     value={ this.state.userInput } />
@@ -60,7 +102,7 @@ class StatsContainer extends Component{
                         <option value='player'>Player</option>
                         <option value='team'>Team</option>
                     </select>
-                    <button onClick={ this.getStats }>Search</button>
+                    <button onClick={ this.getStats }>Search</button> */}
 
                 </section>
 

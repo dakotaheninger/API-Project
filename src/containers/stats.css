@@ -72,5 +72,36 @@
 
 .results{
     width: 100%;
+    background: #fff;
     position: relative;
+}
+
+.player_info{
+    max-width: 200px;
+    margin: 3px 3px 3px 3px;
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.no_results{
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 100px);
+    background: #222;
+    color: #eee;
+    padding: 35px 35px 35px 35px;
+    font-size: 16px;
+}
+
+.close_no_results{
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
 }

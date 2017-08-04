@@ -51,8 +51,41 @@
 .main-articles {
     text-align: center;
 }
-.news-articles{
+
+.news-articles {
     margin-top: 6vmax;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-top: .5vmin;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    text-align: center;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    border-right: 3px solid black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.all-channels {
+    text-align: center;
+}
+
+.fox-sports {
+    margin-top: 3vmin;
 }
 
 /***************
@@ -92,34 +125,57 @@
 
 /*****STATS*****/
 
-.dropdown {
-    position: relative;
+/*****************
+******FOOTER******
+*****************/
+
+.whole-footer {
+    background-image: url("/images/sports.jpg");
+    background-position: center;
+    margin-top: 5vmin;
+}
+
+.footer {
+    background-color: rgba(255,255,255, 0.5);
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+}
+
+.devs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-padding {
+    font-size: 27px;
+}
+.footer-padding:hover {
+    cursor: pointer;
+}
+.circular-image {
     display: inline-block;
-    padding-top: .5vmin;
-}
-
-.dropdown-content {
-    display: none;
     position: relative;
-    z-index: 1;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.circular-image img {
+    width: auto;
+    height: 100%;
+}
+.circular-image:hover {
+    cursor: pointer;
+    border: 6px solid #3B7DB5;
 }
 
-.dropdown-content a {
-    display: block;
-    text-align: center;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
-    border-right:3px solid black;
+.dakota-page {
+    margin-top: 10vmin;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-.all-channels {
-    text-align: center;
-}
-.fox-sports {
-    margin-top: 3vmin;
-}
+
+
+
 
 

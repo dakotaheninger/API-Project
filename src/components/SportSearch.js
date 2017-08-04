@@ -44,6 +44,7 @@ class SportSearch extends Component{
 
              axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.sport}/${year-1}-${year}-regular/roster_players.json?fordate=${year}0101&team=${this.state.teamInput}`, config)
             .then( response => {
+                // console.log(response)
                 newStats = response.data.rosterplayers.playerentry
                 this.props.putStatsOnState(newStats)
             })
@@ -104,13 +105,13 @@ class SportSearch extends Component{
 
                     <input className='team_input input' 
                     onChange={ this.updateTeamInput } 
-                    placeholder='Enter Team Name'
+                    placeholder='Enter City Abbreviation ex: DAL'
                     value={ this.state.teamInput }
                     />
 
                     <input className='player_input input' 
                     onChange={ this.updatePlayerInput } 
-                    placeholder='Enter Player Name'
+                    placeholder='Enter Players Last Name'
                     value={ this.state.playerInput }
                     />
 

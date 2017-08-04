@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import './css/teamPage.css';
 
 class TeamContainer extends Component{
     constructor(props){
@@ -9,12 +10,16 @@ class TeamContainer extends Component{
         }
     }
 
+    componentDidMount(){
+        console.log(this.props)
+    }
+
     render() {
 
         return (
             <section className='team_page'>
 
-                Team Page
+                This is the { this.props.match.params.teamName } team page
 
             </section>
         );

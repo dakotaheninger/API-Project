@@ -26,7 +26,7 @@ class App extends React.Component {
                             <Route exact path ="/" component={HomePageContainer}/>
                             <Route exact path ="/news" component={NewsContainer}/>
                             <Route exact path ="/stats" component={StatsContainer}/>
-                            <Route path ="/team/:team" component={TeamContainer}/>
+                            <Route path ="/team/:teamName" component={TeamContainer}/>
                         </Switch>
                     </div>
                 </BrowserRouter>

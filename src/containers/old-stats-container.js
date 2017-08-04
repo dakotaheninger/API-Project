@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './stats.css';
+import './css/stats.css';
 
 import SportSearch from './../components/SportSearch.js';
 

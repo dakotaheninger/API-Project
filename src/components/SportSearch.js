@@ -52,8 +52,8 @@ class SportSearch extends Component{
 
             axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.sport}/${year-1}-${year}-regular/daily_player_stats.json?fordate=${year}0101&player=${this.state.playerInput}`, config)
             .then( response => {
-                console.log(response) 
-                // newStats = response.data
+                newStats = response.data.dailyplayerstats.playerstatsentry
+                this.props.putStatsOnState(newStats)
             })
 
         }

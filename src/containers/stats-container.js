@@ -40,12 +40,12 @@ class StatsContainer extends Component{
 
     putStatsOnState(newStats){
         if (newStats){
-            newStats = newStats.slice(0, 20);
+            newStats = newStats.slice(0, 100);
         }
         this.setState({
             stats: newStats
         })
-        // console.log(newStats)
+        console.log(newStats)
     }
 
     closeNoResults(){
@@ -58,17 +58,28 @@ class StatsContainer extends Component{
         let results = null;
         if (this.state.stats){
             if (this.state.stats[0].rank){
+    // Overall Standings
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
                             <div> { item.rank}: { item.team.Name } </div> 
                     </div>
                 })
-            }else if (this.state.stats[0].player){
+            }else if (this.state.stats[0].stats){
+    // Player Stats
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
                             <div> 
                                 {item.player.FirstName} {item.player.LastName} ({item.team.Name})
                             </div> 
+                    </div>
+                })
+            }else if (this.state.stats[0].player){
+    // Team Roster
+                results = this.state.stats.map( (item, i) => {
+                    return <div key={i} className='player_info'>
+                            <div>Name: {item.player.FirstName} {item.player.LastName}</div>
+                            <div>Team: {item.team.City} {item.team.Name} ({item.team.Abbreviation})</div>
+                            <div>Position: {item.player.Position}</div>
                     </div>
                 })
             }

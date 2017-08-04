@@ -72,15 +72,26 @@
 
 .results{
     width: 100%;
+    padding: 10px 10px 10px 50px;
     background: #fff;
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
 }
 
 .player_info{
-    max-width: 200px;
-    margin: 3px 3px 3px 3px;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
+    width: 220px;
+    height: 100px;
+    margin: 5px 5px 5px 5px;
+    padding: 3px 3px 3px 3px;
+    border: 1px solid #000;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px gray;
+}
+
+.player_info:hover{
+    transform: scale(1.1);
 }
 
 .no_results{

@@ -58,14 +58,24 @@ class StatsContainer extends Component{
         let results = null;
         if (this.state.stats){
             if (this.state.stats[0].rank){
-    // Overall Standings
+    // Overall Standings shows team rank, name, win-loss spread, and avg point spread
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
-                            <div> { item.rank}: { item.team.Name } </div> 
+                            <div> 
+                                Ranking: { item.rank}- { item.team.City } { item.team.Name } ({ item.team.Abbreviation }) 
+                            </div> 
+                             <div>
+                                 Win/Loss: {item.stats.Wins['#text']}-{item.stats.Losses['#text']} ({ (Number(item.stats.WinPct['#text']) * 100).toFixed(1) }%)
+                            </div> 
+                            <div>Offense scores {item.stats.PtsPerGame['#text']} PPG</div>
+                            <div>Defense allows {item.stats.PtsAgainstPerGame['#text']} PPG</div>
+                            <div>
+                                Avg Point Spread: { (Number(item.stats.PtsPerGame['#text']) - Number(item.stats.PtsAgainstPerGame['#text'])).toFixed(1) }
+                            </div>
                     </div>
                 })
             }else if (this.state.stats[0].stats){
-    // Player Stats
+    // Player Stats show
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
                             <div> 
@@ -73,13 +83,54 @@ class StatsContainer extends Component{
                             </div> 
                     </div>
                 })
-            }else if (this.state.stats[0].player){
-    // Team Roster
+            }else if (this.state.stats[0].stats && this.state.currentSport === 'nba'){
+    // NBA Player Stats show
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
-                            <div>Name: {item.player.FirstName} {item.player.LastName}</div>
+                            <div> 
+                                {item.player.FirstName} {item.player.LastName} ({item.team.Name})
+                            </div> 
+                            <div>Points Per Game: {item.stats.PtsPerGame['#text']}</div>
+                            <div>Rebounds Per Game: {item.stats.RebPerGame['#text']}</div>
+                            <div>Assists Per Game: {item.stats.AstPerGame['#text']}</div>
+                            <div>Steals Per Game: {item.stats.StlPerGame['#text']}</div>
+                    </div>
+                })
+            }else if (this.state.stats[0].stats && this.state.currentSport === 'nfl'){
+    // NFL Player Stats show
+                results = this.state.stats.map( (item, i) => {
+                    return <div key={i} className='player_info'>
+                            <div> 
+                                {item.player.FirstName} {item.player.LastName} ({item.team.Name})
+                            </div> 
+                            <div>Tackles: {item.stats.TackleTotal['#text']}</div>
+                            <div>Interceptions: {item.stats.Interceptions['#text']}</div>
+                    </div>
+                })
+            }else if (this.state.stats[0].stats && this.state.currentSport === 'nhl'){
+    // NHL Player Stats show
+                results = this.state.stats.map( (item, i) => {
+                    return <div key={i} className='player_info'>
+                            <div> 
+                                {item.player.FirstName} {item.player.LastName} ({item.team.Name})
+                            </div> 
+                            <div>Goals: {item.stats.Goals['#text']}</div>
+                            <div>Assists: {item.stats.Assists['#text']}</div>
+                            <div>Penalties: {item.stats.Penalties['#text']}</div>
+                            <div>Shot percentage: {item.stats.ShotPercentage['#text']}</div>
+                    </div>
+                })
+            }else if (this.state.stats[0].player && this.state.currentSport === 'mlb'){
+    // MLB Team Roster shows name, age, team, position, height, and jersey number
+                results = this.state.stats.map( (item, i) => {
+                    return <div key={i} className='player_info'>
+                            <div>
+                                Name: {item.player.FirstName} {item.player.LastName}, {item.player.Age}
+                            </div>
                             <div>Team: {item.team.City} {item.team.Name} ({item.team.Abbreviation})</div>
                             <div>Position: {item.player.Position}</div>
+                            <div>Height: {item.player.Height}</div>
+                            <div>Jersey: {item.player.JerseyNumber}</div>
                     </div>
                 })
             }

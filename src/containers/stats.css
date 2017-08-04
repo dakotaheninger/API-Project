@@ -73,7 +73,7 @@
 .results{
     width: 100%;
     padding: 10px 10px 10px 50px;
-    background: #fff;
+    background: #222;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -82,8 +82,10 @@
 
 .player_info{
     width: 220px;
-    height: 100px;
-    margin: 5px 5px 5px 5px;
+    height: 150px;
+    background: #ddd;
+    color: #111;
+    margin: 8px 5px 8px 5px;
     padding: 3px 3px 3px 3px;
     border: 1px solid #000;
     cursor: pointer;
@@ -92,6 +94,10 @@
 
 .player_info:hover{
     transform: scale(1.1);
+}
+
+.player_info div{
+    border-bottom: 1px solid gray;
 }
 
 .no_results{

@@ -9,6 +9,7 @@ import "./index.css";
 import HomePageContainer from "./containers/home-page-container";
 import NewsContainer from "./containers/news-container";
 import StatsContainer from "./containers/stats-container";
+import TeamContainer from "./containers/team-container";
 import Navbar from "./components/navbar";
 
 
@@ -25,6 +26,7 @@ class App extends React.Component {
                             <Route exact path ="/" component={HomePageContainer}/>
                             <Route exact path ="/news" component={NewsContainer}/>
                             <Route exact path ="/stats" component={StatsContainer}/>
+                            <Route path ="/team/:team" component={TeamContainer}/>
                         </Switch>
                     </div>
                 </BrowserRouter>

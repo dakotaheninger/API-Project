@@ -74,17 +74,21 @@ class StatsContainer extends Component{
                             </div>
                     </div>
                 })
-            }else if (this.state.stats[0].stats){
-    // Player Stats show
+            }else if (this.state.stats[0].stats && this.state.currentSport === 'mlb'){
+    // MLB Player Stats show name, team, batting avg, homeruns, assists, and total bases
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
                             <div> 
                                 {item.player.FirstName} {item.player.LastName} ({item.team.Name})
                             </div> 
+                            <div>Batting Avg: {item.stats.BattingAvg['#text']}</div>
+                            <div>Homeruns: {item.stats.Homeruns['#text']}</div>
+                            <div>Assists: {item.stats.Assists['#text']}</div>
+                            <div>Total bases: {item.stats.TotalBases['#text']}</div>
                     </div>
                 })
             }else if (this.state.stats[0].stats && this.state.currentSport === 'nba'){
-    // NBA Player Stats show
+    // NBA Player Stats show name, team, ppg, rebounds pg, assists pg, and steals pg
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
                             <div> 
@@ -97,7 +101,8 @@ class StatsContainer extends Component{
                     </div>
                 })
             }else if (this.state.stats[0].stats && this.state.currentSport === 'nfl'){
-    // NFL Player Stats show
+    // NFL Player Stats show name, team, teackles, and interceptions. we could split this
+    // out by position and show different stats for different positions! 
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
                             <div> 
@@ -108,7 +113,7 @@ class StatsContainer extends Component{
                     </div>
                 })
             }else if (this.state.stats[0].stats && this.state.currentSport === 'nhl'){
-    // NHL Player Stats show
+    // NHL Player Stats show name, team, goals, assists, penalties, and shot pct
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
                             <div> 
@@ -120,8 +125,8 @@ class StatsContainer extends Component{
                             <div>Shot percentage: {item.stats.ShotPercentage['#text']}</div>
                     </div>
                 })
-            }else if (this.state.stats[0].player && this.state.currentSport === 'mlb'){
-    // MLB Team Roster shows name, age, team, position, height, and jersey number
+            }else if (this.state.stats[0].player){
+    // Team Roster shows name, age, team, position, height, and jersey number
                 results = this.state.stats.map( (item, i) => {
                     return <div key={i} className='player_info'>
                             <div>

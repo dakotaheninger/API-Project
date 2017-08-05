@@ -10,27 +10,7 @@
     height: 80px;   
     position: absolute;
     left: 5px;
-    top: 5px;
-}
-
-.nfl_img{
-    background: url('./../img/nfl.png')center no-repeat;
-    background-size: cover;
-}
-
-.nba_img{
-    background: url('./../img/nba.png')center no-repeat;
-    background-size: cover;
-}
-
-.mlb_img{
-    background: url('./../img/mlb.png')center no-repeat;
-    background-size: cover;
-}
-
-.nhl_img{
-    background: url('./../img/nhl.jpg')center no-repeat;
-    background-size: cover;
+    top: 0px;
 }
 
 .search_options{

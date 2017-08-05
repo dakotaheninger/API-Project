@@ -68,8 +68,7 @@ class StatsContainer extends Component{
                 "username": "dakotaheninger" ,
                 "password": "dh1133094"
             }
-        }
-
+        };
         axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${sport}/${year-1}-${year}-regular/overall_team_standings.json`, config)
         .then( response => {
             newStats = response.data.overallteamstandings.teamstandingsentry

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './css/stats.css';
+import autoBind from "react-autobind";
 
 import SportSearch from './../components/SportSearch.js';
 
@@ -11,13 +12,8 @@ class StatsContainer extends Component{
             searchBy: 'player',
             stats: [{}],
             currentSport: 'nba'
-        }
-
-        this.updateUserInput = this.updateUserInput.bind(this);
-        this.updateSearchBy = this.updateSearchBy.bind(this);
-        this.handleNavClick = this.handleNavClick.bind(this);
-        this.putStatsOnState = this.putStatsOnState.bind(this);
-        this.closeNoResults = this.closeNoResults.bind(this);
+        };
+        autoBind(this);
     }
 
     updateUserInput(e){
@@ -44,7 +40,7 @@ class StatsContainer extends Component{
         }
         this.setState({
             stats: newStats
-        })
+        });
         console.log(newStats)
     }
 

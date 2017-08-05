@@ -208,12 +208,11 @@ class StatsContainer extends Component{
                         {
                             this.state.stats.map( (item, i) => {
                                 let abbr = item.team.Abbreviation
-                                let teamName = item.team.Name
                                 let imgSrc = this.getImageSource(abbr)
 
                                 return <Link key={i} 
                                         className='team_info' 
-                                        to={`/team/${teamName}`}
+                                        to={`/team/${this.state.currentSport}/${abbr}`}
                                         >
                                         <div> 
                                             <img src={imgSrc} alt='team logo' className='team_logo' />

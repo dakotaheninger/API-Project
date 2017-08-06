@@ -56,6 +56,7 @@ class StatsContainer extends Component{
     }
 
     componentDidMount(){
+        this.mounted = true;
         this.getRankings(this.state.currentSport)
     }
 
@@ -71,8 +72,10 @@ class StatsContainer extends Component{
         };
         axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${sport}/${year-1}-${year}-regular/overall_team_standings.json`, config)
         .then( response => {
-            newStats = response.data.overallteamstandings.teamstandingsentry
-            this.putStatsOnState(newStats)
+            if (this.mounted){
+                newStats = response.data.overallteamstandings.teamstandingsentry
+                this.putStatsOnState(newStats)
+            }
         })
     }
 
@@ -208,12 +211,11 @@ class StatsContainer extends Component{
                         {
                             this.state.stats.map( (item, i) => {
                                 let abbr = item.team.Abbreviation
-                                let teamName = item.team.Name
                                 let imgSrc = this.getImageSource(abbr)
 
                                 return <Link key={i} 
                                         className='team_info' 
-                                        to={`/team/${teamName}`}
+                                        to={`/team/${this.state.currentSport}/${abbr}`}
                                         >
                                         <div> 
                                             <img src={imgSrc} alt='team logo' className='team_logo' />

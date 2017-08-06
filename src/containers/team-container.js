@@ -34,14 +34,12 @@ class TeamContainer extends Component{
             })
         })
 
-        axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.match.params.sport}/latest-regular/full_game_schedule.json&team=${this.props.match.params.team}`, config)
+        axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.match.params.sport}/${year}-regular/full_game_schedule.json&team=${this.props.match.params.team}`, config)
         .then( response => {
             console.log(response)
-            // newRoster = response.data.rosterplayers.playerentry
+            // schedule = response.data
             // this.setState({
-            //     roster: newRoster,
-            //     teamName: newRoster[0].team.Name,
-            //     teamCity: newRoster[0].team.City
+            //     schedule: schedule,
             // })
         })
     }

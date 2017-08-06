@@ -56,6 +56,7 @@ class StatsContainer extends Component{
     }
 
     componentDidMount(){
+        this.mounted = true;
         this.getRankings(this.state.currentSport)
     }
 
@@ -71,8 +72,10 @@ class StatsContainer extends Component{
         };
         axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${sport}/${year-1}-${year}-regular/overall_team_standings.json`, config)
         .then( response => {
-            newStats = response.data.overallteamstandings.teamstandingsentry
-            this.putStatsOnState(newStats)
+            if (this.mounted){
+                newStats = response.data.overallteamstandings.teamstandingsentry
+                this.putStatsOnState(newStats)
+            }
         })
     }
 

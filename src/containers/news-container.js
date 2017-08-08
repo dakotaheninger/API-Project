@@ -15,7 +15,7 @@ class NewsContainer extends React.Component {
     render() {
         return (
             <div className="news-articles">
-                <div className="col-md-offset-4 col-md-4 main-articles">
+                <div className="col-md-offset-1 col-md-7 main-articles">
                     <ArticleList allArticles={this.props.allArticles}/>
                 </div>
                 <div className="col-md-offset-1 col-md-2">

@@ -36,7 +36,7 @@ class NewsSelection extends React.Component {
                     </img>
                 </div>
                 <div>
-                    <img alt="NFL" src="/images/nfl.png" height="150px" onClick={() => {
+                    <img alt="NFL" src="/images/nfl-news.png" height="150px" onClick={() => {
                         this.props.loadData(`https://newsapi.org/v1/articles?source=nfl-news&sortBy=top&apiKey=0f683a77678046878ea0e075733292ba`)
                     }}>
                     </img>

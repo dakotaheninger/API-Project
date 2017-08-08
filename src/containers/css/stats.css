@@ -1,19 +1,12 @@
 .stats_page{
-    width: 100%;
-    position: relative;
-    height: 100vh;
-    padding-top: 90px;
-    background: #eee;
+    /*width: 100%;*/
+    /*position: relative;*/
+    /*height: 100vh;*/
+    padding-top: 10vh;
+    /*background: #eee;*/
 }
 
-.sport_heading{
-    width: 100%;
-    height: 90px;
-    position: relative;
-    text-align: center;
-    font-weight: bold;
-    font-size: 22px;
-}
+
 
 .search_img{
     width: 80px;
@@ -23,34 +16,8 @@
     top: 0px;
 }
 
-.sport_heading h3{
-    font-size: 19px;
-}
 
-.stats_nav{
-    width: 100%;
-    height: 30px;
-    position: relative;
-    padding-left: 15px;
-    /* display: flex;
-    justify-content: space-between; */
-    line-height: 30px;
-    font-size: 18px;
-    font-weight: bold;
-    background: linear-gradient(#333, #ccc, #333);
-}
 
-.stats_nav div{
-    width: 100px;
-    height: 30px;
-    text-align: center;
-    background:linear-gradient(#aaa, #888,#aaa);
-    cursor: pointer;
-    display: inline-block;
-    margin-right: -10px;
-    -webkit-clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
-    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
-}
 
 .search_bar{
     width: 100%;
@@ -91,44 +58,35 @@
     top: 55px;
 }
 
-.results{
-    width: 100%;
-    padding: 10px 10px 10px 50px;
-    background: #222;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-}
+/*.results{*/
+    /*width: 100%;*/
+    /*padding: 10px 10px 10px 50px;*/
+    /*background: #222;*/
+    /*position: relative;*/
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: left;*/
+/*}*/
 
-.team_info{
-    width: 220px;
-    height: 150px;
-    background: #ddd;
-    color: #111;
-    margin: 8px 5px 8px 5px;
-    padding: 3px 3px 3px 3px;
-    border: 1px solid #000;
-    cursor: pointer;
-    box-shadow: 1px 1px 2px gray;
-    position: relative;
-}
+/*.team_info{*/
+    /*width: 220px;*/
+    /*height: 150px;*/
+    /*background: #ddd;*/
+    /*color: #111;*/
+    /*margin: 8px 5px 8px 5px;*/
+    /*padding: 3px 3px 3px 3px;*/
+    /*border: 1px solid #000;*/
+    /*cursor: pointer;*/
+    /*box-shadow: 1px 1px 2px gray;*/
+    /*position: relative;*/
+/*}*/
 
-.team_info:hover{
-    transform: scale(1.1);
-}
 
-.team_info div{
-    border-bottom: 1px solid gray;
-}
 
-.team_logo{
-    width: 140px;
-    height: 90px;
-    position: absolute;
-    bottom: 5px;
-    left: 40px;
-}
+/*.team_info div{*/
+    /*border-bottom: 1px solid gray;*/
+/*}*/
+
 
 .no_results{
     width: 200px;
@@ -151,4 +109,7 @@
     right: 5px;
     top: 5px;
     cursor: pointer;
+}
+
+.ind-teams {
 }

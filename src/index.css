@@ -1,38 +1,53 @@
+body {
+    background-color: #E1DEE9;
+}
+
 /***************
 *****NAVBAR*****
 ***************/
 
 .nav-bar {
+    background-color: rgba(255, 255, 255, 0.9);
     position: fixed;
     width: 100%;
-    background-color: black;
     z-index: 2;
 }
 
 .main-title {
-    color: white;
+    color: #EF6F6C;
     font-style: italic;
     font-family: 'Permanent Marker', cursive;
     font-size: 50px;
+    margin-left: 1vw;
 }
 
-.all-links {
+.all-links h1 {
+    font-size: 50px;
+    font-style: italic;
+    font-family: 'Permanent Marker', cursive;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.link-titles a {
+    color: #EF6F6C;
 }
 
 /***************
 *****HEADER*****
 ***************/
 
-.header {
-    padding-top: 10vh;
-}
+/*.header {*/
+/*padding-top: 10vh;*/
+/*}*/
 
 /*****************
 *****ARTICLES*****
 *****************/
+.main-page {
+    margin-top: 15vh;
+}
 
 .story-title {
     font-size: 30px;
@@ -53,7 +68,11 @@
 }
 
 .news-articles {
-    margin-top: 6vmax;
+    margin-top: 15vh;
+}
+
+.ind-articles {
+    text-align: left;
 }
 
 .dropdown {
@@ -123,7 +142,49 @@
     margin-left: 1vmin;
 }
 
-/*****STATS*****/
+/*****************
+*******STATS******
+*****************/
+.stats-nav {
+    z-index: 2;
+    height: 30px;
+    position: fixed;
+    padding-left: 15px;
+    line-height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(#E1DEE9, #EF6F6C, #E1DEE9);
+    margin-top: 3vmin;
+}
+
+.stats-nav div {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background: linear-gradient(#EF6F6C, #E1DEE9, #EF6F6C);
+    cursor: pointer;
+    display: inline-block;
+    margin-right: -10px;
+    -webkit-clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+    clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+}
+
+.sport-heading h3 {
+    font-size: 19px;
+}
+
+.sport-heading {
+    margin-top: 8vmin;
+    height: 90px;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.sport-heading img {
+    border-radius: 50%;
+}
 
 /*****************
 ******FOOTER******
@@ -136,7 +197,7 @@
 }
 
 .footer {
-    background-color: rgba(255,255,255, 0.5);
+    background-color: rgba(255, 255, 255, 0.5);
     padding-top: 2vmin;
     padding-bottom: 2vmin;
 }
@@ -150,9 +211,11 @@
 .footer-padding {
     font-size: 27px;
 }
+
 .footer-padding:hover {
     cursor: pointer;
 }
+
 .circular-image {
     display: inline-block;
     position: relative;
@@ -161,10 +224,12 @@
     overflow: hidden;
     border-radius: 50%;
 }
+
 .circular-image img {
     width: auto;
     height: 100%;
 }
+
 .circular-image:hover {
     cursor: pointer;
     border: 6px solid #3B7DB5;
@@ -172,6 +237,56 @@
 
 .dakota-page {
     margin-top: 10vmin;
+}
+
+/****************
+******TEAMS******
+****************/
+
+.ind-teams {
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+    border-radius: 30%;
+    border: 3px solid black;
+    text-align: center;
+}
+
+.ind-teams:hover {
+    border: 3px solid #EF6F6C;
+}
+
+.team-img {
+    padding-top: 1vmin;
+    padding-bottom: 1vmin;
+}
+
+.team-info {
+    padding-top: 2vmin;
+    padding-bottom: 2vmin;
+}
+
+.team-logo {
+    width: 130px;
+    height: 90px;
+}
+
+.ind-teams p {
+    display: none;
+    font-size: 25px;
+    color: #EF6F6C;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.ind-teams:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.ind-teams:hover img {
+    display: none;
+}
+
+.ind-teams:hover p {
+    display: block;
 }
 
 

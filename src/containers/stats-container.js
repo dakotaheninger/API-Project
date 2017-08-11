@@ -1,76 +1,36 @@
 import React, {Component} from "react";
 import './css/stats.css';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
-import autoBind from "react-autobind";
-
-import SportSearch from './../components/SportSearch.js';
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
+import * as actionCreators from "../actions/";
 import Teams from "../components/teams";
 
 
 class StatsContainer extends Component {
-    constructor(props) {
-        super(props);
-        autoBind(this);
-        this.state = {
-            stats: [{team: {}}],
-            currentSport: 'nba'
-        };
+
+    componentWillMount() {
+        this.props.getIndStats(this.props.currentSport);
     }
 
-    componentDidMount() {
-        this.getRankings(this.state.currentSport)
-    }
-
-    getRankings(sport) {
-        let today = new Date();
-        let year = today.getFullYear();
-        let newStats = [];
-        let config = {
-            "auth": {
-                "username": "dakotaheninger",
-                "password": "dh1133094"
-            }
-        };
-        axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${sport}/${year - 1}-${year}-regular/overall_team_standings.json`, config)
-            .then(response => {
-                newStats = response.data.overallteamstandings.teamstandingsentry;
-                this.putStatsOnState(newStats)
-            })
-    }
-
-    handleNavClick(str) {
-        this.setState({
-            currentSport: str
-        });
-        this.getRankings(str)
-    }
-
-    putStatsOnState(newStats) {
-        this.setState({
-            stats: newStats
-        });
-        console.log(newStats)
-    }
 
     getTeams() {
-        return this.state.stats.map((item, index) => {
-            return <Teams sport={this.state.currentSport} item={item} index={index} key={item + index}/>
+        return this.props.teamStats.map((item, index) => {
+            return <Teams setTeam={this.props.setTeam} roster={this.props.roster} getSchedule={this.props.getSchedule} getRoster={this.props.getRoster}
+                          sport={this.props.currentSport} item={item} index={index} key={item + index}/>
         })
     }
 
 
     render() {
-
-        let sport = this.state.currentSport;
+        let sport = this.props.currentSport;
         let img = null;
-        if (sport === 'nba') {
+        if (sport === "nba") {
             img = <img src="/images/nba.png" className='search_img' alt='nba symbol'/>
-        } else if (sport === 'nfl') {
+        } else if (sport === "nfl") {
             img = <img src="/images/nfl.png" className='search_img' alt='nfl symbol'/>
-        } else if (sport === 'nhl') {
+        } else if (sport === "nhl") {
             img = <img src="/images/nhl.jpg" className='search_img' alt='nhl symbol'/>
-        } else if (sport === 'mlb') {
+        } else if (sport === "mlb") {
             img = <img src="/images/mlb.png" className='search_img' alt='mlb symbol'/>
         }
 
@@ -78,16 +38,28 @@ class StatsContainer extends Component {
             <div className='stats_page'>
                 <div className="row">
                     <div className='col-md-12 col-sm-12 col-xs-12 stats-nav'>
-                        <div onClick={() => this.handleNavClick('nba')}>
+                        <div onClick={() => {
+                            this.props.setSport("nba");
+                            this.props.getIndStats("nba");
+                        }}>
                             NBA
                         </div>
-                        <div onClick={() => this.handleNavClick('nhl')}>
+                        <div onClick={() => {
+                            this.props.setSport("nhl");
+                            this.props.getIndStats("nhl");
+                        }}>
                             NHL
                         </div>
-                        <div onClick={() => this.handleNavClick('mlb')}>
+                        <div onClick={() => {
+                            this.props.setSport("mlb");
+                            this.props.getIndStats("mlb");
+                        }}>
                             MLB
                         </div>
-                        <div onClick={() => this.handleNavClick('nfl')}>
+                        <div onClick={() => {
+                            this.props.setSport("nfl");
+                            this.props.getIndStats("nfl");
+                        }}>
                             NFL
                         </div>
                     </div>
@@ -95,7 +67,7 @@ class StatsContainer extends Component {
                 <div className="row">
                     <div className="sport-heading">
                         {img}
-                        <h2>Overall {this.state.currentSport.toUpperCase()} Standings</h2>
+                        <h2>Overall {this.props.currentSport.toUpperCase()} Standings</h2>
                         <h3>Select a team to visit their page</h3>
                     </div>
                 </div>
@@ -110,4 +82,13 @@ class StatsContainer extends Component {
 }
 
 
-export default StatsContainer;
+const mapStateToProps = (state) => {
+    return state;
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators(actionCreators, dispatch);
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(StatsContainer);

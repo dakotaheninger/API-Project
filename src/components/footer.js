@@ -12,7 +12,7 @@ class Footer extends React.Component {
                         <div className="devs col-md-offset-1 col-md-3">
                             <div>
                                 <Link to="/DakotaHeninger" className="circular-image">
-                                    <img src="/images/DSC_1862.JPG"/>
+                                    <img alt="Dakota Heninger" src="/images/DSC_1862.JPG"/>
                                 </Link>
                             </div>
                             <a className="footer-padding fa-stack" href="https://github.com/dakotaheninger">
@@ -41,7 +41,7 @@ class Footer extends React.Component {
                         <div className="devs col-md-offset-4 col-md-3">
                             <div>
                                 <Link to="/LorenPabst" className="circular-image">
-                                    <img src="/images/headshot_devmtn.jpg"/>
+                                    <img alt="Loren Pabst" src="/images/headshot_devmtn.jpg"/>
                                 </Link>
                             </div>
                             <a className="footer-padding fa-stack" href="https://github.com/lpabst">

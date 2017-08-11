@@ -1,7 +1,8 @@
-.team_page{
+.team-page{
     width: 100%;
     padding-top: 100px;
     position: relative;
+    color: white;
 }
 
 .team_page h2{

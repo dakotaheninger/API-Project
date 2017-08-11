@@ -5,7 +5,7 @@ import Article from "./article";
 class ArticleList extends React.Component {
     getArticles(){
         return this.props.allArticles.map((item, index) =>{
-            return <Article item={item} index={index} key={item + index}/>
+                return <Article item={item} index={index} key={item + index}/>
         })
     }
     render()

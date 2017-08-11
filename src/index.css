@@ -1,5 +1,13 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 body {
-    background-color: #E1DEE9;
+    background-image: url("/images/dark-triangles.png");
 }
 
 /***************
@@ -7,14 +15,14 @@ body {
 ***************/
 
 .nav-bar {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
     width: 100%;
     z-index: 2;
 }
 
 .main-title {
-    color: #EF6F6C;
+    color: #16425B;
     font-style: italic;
     font-family: 'Permanent Marker', cursive;
     font-size: 50px;
@@ -31,7 +39,12 @@ body {
 }
 
 .link-titles a {
-    color: #EF6F6C;
+    color: #16425B;
+}
+
+.link-titles a:hover {
+    text-decoration: none;
+    color: white;
 }
 
 /***************
@@ -51,12 +64,12 @@ body {
 
 .story-title {
     font-size: 30px;
-    color: black;
+    color: white;
 }
 
 .story-description {
     font-size: 15px;
-    color: black;
+    color: white;
 }
 
 .home-articles {
@@ -90,13 +103,19 @@ body {
 .dropdown-content a {
     display: block;
     text-align: center;
-    border-left: 3px solid black;
-    border-bottom: 3px solid black;
-    border-right: 3px solid black;
+    border-left: 3px solid #EF6F6C;
+    border-bottom: 3px solid #EF6F6C;
+    border-right: 3px solid #EF6F6C;
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.dropdown-content a:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .all-channels {
@@ -105,6 +124,15 @@ body {
 
 .fox-sports {
     margin-top: 3vmin;
+}
+
+.all-channels div img {
+    opacity: .3;
+}
+
+.all-channels div img:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 /***************
@@ -116,61 +144,77 @@ body {
 }
 
 .ind-score {
-    border: 2px solid black;
+    border: 4px solid #16425B;
     width: 40%;
     /*height: 5vh;*/
     margin: 2vmin;
     display: inline-block;
     text-align: left;
+    /*padding: 1vmin 0;*/
 }
 
 .team-name {
-    margin-left: 1vmin;
+    font-weight: 700;
+    border-radius: 25px;
+    color: white;
 }
 
 .team-score {
     float: right;
     margin-right: 1vmin;
+    font-weight: 700;
+    color: white;
 }
 
 .ind-pop-stories {
     margin: 1vmin 0;
-    color: black;
+    color: white;
 }
 
 .at {
-    margin-left: 1vmin;
+    font-family: 'Arvo', serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+}
+
+.top-score {
+    margin-top: .5vmin;
 }
 
 /*****************
 *******STATS******
 *****************/
 .stats-nav {
-    z-index: 2;
+    /*z-index: 2;*/
     height: 30px;
-    position: fixed;
+    /*position: fixed;*/
     padding-left: 15px;
     line-height: 30px;
     font-size: 18px;
     font-weight: bold;
-    background: linear-gradient(#E1DEE9, #EF6F6C, #E1DEE9);
+    background: linear-gradient(#272727, white, #272727);
     margin-top: 3vmin;
 }
 
 .stats-nav div {
-    width: 100px;
+    width: 200px;
     height: 30px;
     text-align: center;
-    background: linear-gradient(#EF6F6C, #E1DEE9, #EF6F6C);
+    background: linear-gradient(white, #857F74, white);
+    /*background-color: #EF6F6C;*/
     cursor: pointer;
     display: inline-block;
     margin-right: -10px;
     -webkit-clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
     clip-path: polygon(15% 0%, 100% 0%, 85% 100%, 0% 100%);
+    /*border: 2px solid white;*/
+    color: black;
 }
 
 .sport-heading h3 {
     font-size: 19px;
+    color: white;
 }
 
 .sport-heading {
@@ -180,10 +224,19 @@ body {
     text-align: center;
     font-weight: bold;
     font-size: 22px;
+    color: white;
 }
 
 .sport-heading img {
     border-radius: 50%;
+}
+
+.team-title {
+    text-align: center;
+}
+
+.offseason {
+    text-align: center;
 }
 
 /*****************
@@ -197,7 +250,7 @@ body {
 }
 
 .footer {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     padding-top: 2vmin;
     padding-bottom: 2vmin;
 }
@@ -242,6 +295,9 @@ body {
 /****************
 ******TEAMS******
 ****************/
+.team-page {
+    margin-bottom: 15vmin;
+}
 
 .ind-teams {
     padding-top: 1vmin;
@@ -249,10 +305,11 @@ body {
     border-radius: 30%;
     border: 3px solid black;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .ind-teams:hover {
-    border: 3px solid #EF6F6C;
+    border: 3px solid #16425B;
 }
 
 .team-img {
@@ -273,12 +330,12 @@ body {
 .ind-teams p {
     display: none;
     font-size: 25px;
-    color: #EF6F6C;
+    color: #16425B;
     font-family: 'Permanent Marker', cursive;
 }
 
 .ind-teams:hover {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .ind-teams:hover img {
@@ -289,8 +346,29 @@ body {
     display: block;
 }
 
+.all-roster {
+    color: white;
+}
 
+.all-schedule {
+    color: white;
+}
 
+/***************
+******MEDIA*****
+***************/
 
+@media (max-width: 1100px) {
+    .stats-nav {
+        margin-top: -2vmin;
+    }
 
+    .sport-heading {
+        margin-top: 4vmin;
+    }
+
+    .whole-footer {
+        margin-top: 21vmin;
+    }
+}
 

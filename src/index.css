@@ -103,9 +103,9 @@ body {
 .dropdown-content a {
     display: block;
     text-align: center;
-    border-left: 3px solid #EF6F6C;
-    border-bottom: 3px solid #EF6F6C;
-    border-right: 3px solid #EF6F6C;
+    border-left: 3px solid #16425B;
+    border-bottom: 3px solid #16425B;
+    border-right: 3px solid #16425B;
     color: white;
 }
 

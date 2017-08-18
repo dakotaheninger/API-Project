@@ -1,11 +1,6 @@
 import axios from "axios";
+let config = require('./config.js');
 
-let config = {
-    auth: {
-        username: "dakotaheninger",
-        password: "dh1133094"
-    }
-};
 
 
 let addZero = (num) => {

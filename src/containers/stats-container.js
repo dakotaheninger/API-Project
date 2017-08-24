@@ -1,5 +1,4 @@
 import React, {Component} from "react";
-import './css/stats.css';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as actionCreators from "../actions/";
@@ -25,17 +24,17 @@ class StatsContainer extends Component {
         let sport = this.props.currentSport;
         let img = null;
         if (sport === "nba") {
-            img = <img src="/images/nba.png" className='search_img' alt='nba symbol'/>
+            img = <img src="/images/nba.png" className='search-img' alt='nba symbol'/>
         } else if (sport === "nfl") {
-            img = <img src="/images/nfl.png" className='search_img' alt='nfl symbol'/>
+            img = <img src="/images/nfl.png" className='search-img' alt='nfl symbol'/>
         } else if (sport === "nhl") {
-            img = <img src="/images/nhl.jpg" className='search_img' alt='nhl symbol'/>
+            img = <img src="/images/nhl.jpg" className='search-img' alt='nhl symbol'/>
         } else if (sport === "mlb") {
-            img = <img src="/images/mlb.png" className='search_img' alt='mlb symbol'/>
+            img = <img src="/images/mlb.png" className='search-img' alt='mlb symbol'/>
         }
 
         return (
-            <div className='stats_page'>
+            <div className='stats-page'>
                 <div className="row">
                     <div className='col-md-12 col-sm-12 col-xs-12 stats-nav'>
                         <div onClick={() => {

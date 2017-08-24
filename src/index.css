@@ -30,7 +30,7 @@ body {
 }
 
 .all-links h1 {
-    font-size: 50px;
+    font-size: 5vmin;
     font-style: italic;
     font-family: 'Permanent Marker', cursive;
     display: flex;
@@ -59,7 +59,7 @@ body {
 *****ARTICLES*****
 *****************/
 .main-page {
-    margin-top: 15vh;
+    margin-top: 10vmax;
 }
 
 .story-title {
@@ -246,7 +246,7 @@ body {
 .whole-footer {
     background-image: url("/images/sports.jpg");
     background-position: center;
-    margin-top: 5vmin;
+    margin-top: 5vh;
 }
 
 .footer {
@@ -288,15 +288,43 @@ body {
     border: 6px solid #3B7DB5;
 }
 
-.dakota-page {
-    margin-top: 10vmin;
+.about-page {
+    margin-top: 15vmin;
+    height: calc(100vh - 20vh);
+    color: white;
+}
+.about-names {
+    margin-bottom: 5vh;
+}
+.about-pics {
+    margin-bottom: 5vh;
 }
 
 /****************
 ******TEAMS******
 ****************/
+.stats-page{
+    /*width: 100%;*/
+    /*position: relative;*/
+    /*height: 100vh;*/
+    padding-top: 10vh;
+    /*background: #eee;*/
+}
+
+.search-img{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}
+
 .team-page {
-    margin-bottom: 15vmin;
+    margin-bottom: 25vmin;
+    width: 100%;
+    padding-top: 100px;
+    position: relative;
+    color: white;
 }
 
 .ind-teams {
@@ -354,21 +382,46 @@ body {
     color: white;
 }
 
+
+/***************
+****ABOUT US****
+***************/
+
+
+
 /***************
 ******MEDIA*****
 ***************/
+/*@media (max-width: 1700px) {*/
+    /*.ind-score {*/
+        /*width: 90%;*/
+    /*}*/
+/*}*/
 
-@media (max-width: 1100px) {
-    .stats-nav {
-        margin-top: -2vmin;
-    }
+/*@media (max-width: 1100px) {*/
+    /*.stats-nav {*/
+        /*margin-top: -2vmin;*/
+    /*}*/
 
-    .sport-heading {
-        margin-top: 4vmin;
-    }
+    /*.sport-heading {*/
+        /*margin-top: 4vmin;*/
+    /*}*/
 
-    .whole-footer {
-        margin-top: 21vmin;
-    }
-}
+    /*.whole-footer {*/
+        /*margin-top: 21vmin;*/
+    /*}*/
+/*}*/
+/*@media (max-width: 1000px) {*/
+ /*.ind-score {*/
+     /*display: none;*/
+ /*}*/
+    /*.header {*/
+        /*margin-top: 5vh;*/
+    /*}*/
+/*}*/
+/*@media (max-width: 800px) {*/
+    /*.main-page {*/
+        /*margin-top: 15vh;*/
+    /*}*/
+/*}*/
 

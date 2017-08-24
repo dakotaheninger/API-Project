@@ -4,7 +4,6 @@ import {bindActionCreators} from "redux";
 import * as actionCreators from "../actions/";
 import ScoresList from "../components/scores-list";
 import PopularArticlesList from "../components/popular-articles-list";
-import Header from "../components/header";
 import HomePageArticleList from "../components/home-page-article-list";
 
 class HomePageContainer extends React.Component {
@@ -12,20 +11,20 @@ class HomePageContainer extends React.Component {
         this.props.loadData();
         this.props.scoreData();
     }
+
     render() {
         return (
-            <div className="main-page">
-                <div className="col-md-12">
-                    <Header/>
-                </div>
-                <div className="col-md-4">
-                    <ScoresList teamStats={this.props.teamStats} allScores={this.props.allScores}/>
-                </div>
-                <div className="col-md-4 home-articles">
-                    <HomePageArticleList allArticles={this.props.allArticles}/>
-                </div>
-                <div>
-                    <PopularArticlesList mixedTopStories={this.props.mixedTopStories}/>
+            <div className="row">
+                <div className="main-page">
+                    <div className="col-md-4">
+                        <ScoresList teamStats={this.props.teamStats} allScores={this.props.allScores}/>
+                    </div>
+                    <div className="col-md-4 home-articles">
+                        <HomePageArticleList allArticles={this.props.allArticles}/>
+                    </div>
+                    <div>
+                        <PopularArticlesList mixedTopStories={this.props.mixedTopStories}/>
+                    </div>
                 </div>
             </div>
         );

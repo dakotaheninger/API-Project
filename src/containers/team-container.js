@@ -1,5 +1,4 @@
 import React from "react";
-import './css/teamPage.css';
 import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 import * as actionCreators from "../actions/";

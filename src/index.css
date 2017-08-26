@@ -392,36 +392,36 @@ body {
 /***************
 ******MEDIA*****
 ***************/
-/*@media (max-width: 1700px) {*/
-    /*.ind-score {*/
-        /*width: 90%;*/
-    /*}*/
-/*}*/
+@media (max-width: 1700px) {
+    .ind-score {
+        width: 90%;
+    }
+}
 
-/*@media (max-width: 1100px) {*/
-    /*.stats-nav {*/
-        /*margin-top: -2vmin;*/
-    /*}*/
+@media (max-width: 1100px) {
+    .stats-nav {
+        margin-top: -2vmin;
+    }
 
-    /*.sport-heading {*/
-        /*margin-top: 4vmin;*/
-    /*}*/
+    .sport-heading {
+        margin-top: 4vmin;
+    }
 
-    /*.whole-footer {*/
-        /*margin-top: 21vmin;*/
-    /*}*/
-/*}*/
-/*@media (max-width: 1000px) {*/
- /*.ind-score {*/
-     /*display: none;*/
- /*}*/
-    /*.header {*/
-        /*margin-top: 5vh;*/
-    /*}*/
-/*}*/
-/*@media (max-width: 800px) {*/
-    /*.main-page {*/
-        /*margin-top: 15vh;*/
-    /*}*/
-/*}*/
+    .whole-footer {
+        margin-top: 21vmin;
+    }
+}
+@media (max-width: 1000px) {
+ .ind-score {
+     display: none;
+ }
+    .header {
+        margin-top: 5vh;
+    }
+}
+@media (max-width: 800px) {
+    .main-page {
+        margin-top: 15vh;
+    }
+}
 

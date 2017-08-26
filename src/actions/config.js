@@ -1,6 +1,6 @@
 module.exports = {
     auth: {
-        username: process.env.USERNAME,
-        password: process.env.PASSWORD
+        username: "dakotaheninger",
+        password: "dh1133094"
     }
 };

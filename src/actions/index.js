@@ -15,14 +15,6 @@ let year = newDate.getFullYear();
 let month = addZero(parseInt(newDate.getMonth()) + 1);
 let day = addZero(parseInt(newDate.getDate()) - 1);
 
-//axios.get(`https://api.mysportsfeeds.com/v1.1/pull/${this.props.currentTeam}/${year}-regular/full_game_schedule.json&team=${this.props.match.params.team}`, config)
-//     .then( response => {
-//         console.log(response)
-//         // schedule = response.data
-//         // this.setState({
-//         //     schedule: schedule,
-//         // })
-//     })
 
 
 export function getSchedule(sportStr, teamStr) {
